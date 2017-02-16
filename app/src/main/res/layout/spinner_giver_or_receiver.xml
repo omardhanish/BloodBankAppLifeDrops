@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/spinnerbackground"
+    android:padding="2dp">
+
+
+
+
+    <LinearLayout
+        android:id="@+id/la"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_gravity="center"
+        >
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Select 'Receiver' (One who in need of blood) or 'Giver' (One who gives blood) ..."
+            android:textSize="25dip"
+            android:textStyle="bold"
+            android:textColor="#fff"/>
+        <RadioGroup
+            android:id="@+id/radioSex"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            >
+
+            <RadioButton
+                android:id="@+id/radioMale"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Receiver"
+                android:textStyle="bold"
+                android:layout_margin="10dp"
+                android:textColor="#fff"
+                android:textSize="25dp"
+                android:checked="true" />
+
+            <RadioButton
+                android:id="@+id/radioFemale"
+                android:textStyle="bold"
+                android:textColor="#fff"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="10dp"
+                android:textSize="25dp"
+                android:text="Giver" />
+
+        </RadioGroup>
+
+        <Button
+            android:id="@+id/btnDisplay"
+            android:layout_gravity="center"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Next"
+            android:textColor="#000"
+            android:elevation="5dp"
+            android:background="#FFEB3B"
+            android:layout_marginTop="10dp"/>
+
+    </LinearLayout>
+
+
+
+</LinearLayout>

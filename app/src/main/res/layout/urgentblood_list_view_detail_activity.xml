@@ -1,0 +1,194 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <RelativeLayout
+        android:id="@+id/relativelayoutback"
+        android:layout_width="match_parent"
+        android:layout_height="200dp"
+        android:background="#D50000">
+        <TextView
+            android:id="@+id/textview"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="30dp"
+            android:textColor="#fff"
+            android:text="Blood Group: "
+            android:layout_alignParentBottom="true"/>
+
+        <TextView
+            android:id="@+id/bloodgroup1"
+            android:layout_toRightOf="@+id/textview"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="bottom"
+            android:textColor="#fff"
+            android:textSize="30dp"
+            android:text="Blood Group"
+            android:layout_alignParentBottom="true"/>
+    </RelativeLayout>
+
+    <LinearLayout
+        android:layout_marginTop="10dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <TextView
+                android:id="@+id/name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Name:"
+                android:textColor="#000"
+                android:textSize="20sp"/>
+            <TextView
+                android:id="@+id/personname1"
+                android:layout_toRightOf="@+id/name"
+                android:text="person name"
+                android:layout_marginLeft="@dimen/activity_horizontal_margin"
+                android:textColor="#9f9f9f"
+                android:textSize="20sp"
+                android:padding="5dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <TextView
+                android:id="@+id/status"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Status:"
+                android:textColor="#000"
+                android:textSize="20sp"/>
+
+            <TextView
+                android:id="@+id/urgentorveryurgent1"
+                android:textSize="20dp"
+                android:padding="5dp"
+                android:layout_toRightOf="@+id/status"
+                android:layout_marginLeft="@dimen/activity_horizontal_margin"
+                android:textColor="#9f9f9f"
+                android:text="urgent or very urgent"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <TextView
+                android:id="@+id/Placename"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Place name:"
+                android:textColor="#000"
+                android:textSize="20sp"/>
+
+
+            <TextView
+                android:id="@+id/place1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_toRightOf="@+id/Placename"
+                android:layout_marginLeft="@dimen/activity_horizontal_margin"
+                android:text="Place"
+                android:textColor="#9f9f9f"
+                android:textSize="20dp"
+                android:padding="5dp"/>
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <TextView
+                android:id="@+id/Phonenumbersuma123"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Phone:"
+                android:textColor="#000"
+                android:textSize="20sp"/>
+
+            <TextView
+                android:id="@+id/phonenumber1"
+                android:text="phonenumber"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_toRightOf="@+id/Phonenumbersuma123"
+                android:layout_marginLeft="@dimen/activity_horizontal_margin"
+                android:layout_gravity="center"
+                android:textSize="20dp"
+                android:textColor="#9f9f9f"
+                android:padding="5dp"
+                />
+            <Button
+                android:id="@+id/buttoncall"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="5dp"
+                android:textColor="#000"
+                android:text="call"
+                android:background="#4CAF50"
+                android:layout_alignParentRight="true"/>
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <TextView
+                android:id="@+id/hospitalname123"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="hospital name:"
+                android:textColor="#000"
+                android:textSize="20sp"/>
+
+            <TextView
+                android:id="@+id/hospitalname1"
+                android:text="Hospital Name"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_toRightOf="@+id/hospitalname123"
+                android:layout_marginLeft="@dimen/activity_horizontal_margin"
+                android:layout_gravity="center"
+                android:textSize="20dp"
+                android:textColor="#9f9f9f"
+                android:padding="5dp"
+                />
+
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <Button
+                android:id="@+id/buttonchat"
+                android:layout_width="match_parent"
+                android:elevation="5dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:textColor="#000"
+                android:background="#4CAF50"
+                android:layout_marginTop="15dp"
+                android:layout_marginBottom="10dp"
+                android:layout_marginLeft="80dp"
+                android:layout_marginRight="80dp"
+                android:text="Chat" />
+
+
+        </RelativeLayout>
+    </LinearLayout>
+
+</LinearLayout>
