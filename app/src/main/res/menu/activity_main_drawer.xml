@@ -9,19 +9,24 @@
         <item
             android:id="@+id/nav_gallery"
             android:icon="@drawable/ic_menu_gallery"
-            android:title="Edit post here" />
+            android:title="My board" />
         <item
             android:id="@+id/nav_slideshow"
             android:icon="@drawable/ic_menu_slideshow"
-            android:title="Check Alerts Here" />
+            android:title="Notification" />
+        <item
+            android:id="@+id/events"
+            android:icon="@drawable/ic_menu_manage"
+            android:title="Events" />
         <item
             android:id="@+id/nav_manage"
             android:icon="@drawable/ic_menu_manage"
             android:title="Login" />
+
         <item
             android:id="@+id/nav_Logout"
             android:icon="@drawable/ic_menu_manage"
-            android:title="Exit" />
+            android:title="sign out" />
     </group>
 
     <!--<item android:title="Communicate">-->

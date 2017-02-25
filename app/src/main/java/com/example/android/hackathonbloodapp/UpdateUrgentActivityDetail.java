@@ -229,7 +229,7 @@ public class UpdateUrgentActivityDetail extends AppCompatActivity implements
     }
 
 
-    private void deletePet() {
+    public void deletePet() {
 
         if (mCurrentPetUri != null) {
 

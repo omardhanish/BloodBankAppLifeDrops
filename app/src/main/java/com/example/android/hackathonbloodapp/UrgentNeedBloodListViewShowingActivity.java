@@ -2,8 +2,7 @@ package com.example.android.hackathonbloodapp;
 
 //import android.support.v4.app.LoaderManager;
 
-import android.app.Activity;
-import android.app.ListFragment;
+
 import android.support.v4.app.Fragment;
 import android.support.v4.app.LoaderManager;
 import android.content.ContentUris;
@@ -14,18 +13,27 @@ import android.database.Cursor;
 import android.net.Uri;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
-import android.support.v7.app.AppCompatActivity;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AdapterView;
+import android.widget.Button;
 import android.widget.ListView;
+import android.widget.RadioButton;
+import android.widget.RadioGroup;
 
 /**
  * Created by omar on 14-02-2017.
  */
 public class UrgentNeedBloodListViewShowingActivity extends Fragment implements
         LoaderManager.LoaderCallbacks<Cursor> {
+
+
+    Button button;
+
+    ListView urgentbloodListview;
+
+    RadioButton whatselected;
 
     public UrgentNeedBloodListViewShowingActivity() {
 
@@ -47,6 +55,11 @@ public class UrgentNeedBloodListViewShowingActivity extends Fragment implements
 
 
         FloatingActionButton fab = (FloatingActionButton) rootView.findViewById(R.id.fab);
+
+
+
+
+
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -54,30 +67,6 @@ public class UrgentNeedBloodListViewShowingActivity extends Fragment implements
                 startActivity(intent);
             }
         });
-
-//        ListView urgentbloodListview = (ListView)rootView.findViewById(R.id.urgentbloodlist);
-//
-//        mbloodCursorAdapter = new BloodCursorAdapter(getContext(),null);
-//        urgentbloodListview.setAdapter(mbloodCursorAdapter);
-//
-//        urgentbloodListview.setOnItemClickListener(new AdapterView.OnItemClickListener() {
-//            @Override
-//            public void onItemClick(AdapterView<?> adapterView, View view, int position, long id) {
-//                Intent intent = new Intent(getActivity(), UrgentBloodDetailActivity.class);
-//
-//                Uri currentPetUri = ContentUris.withAppendedId(DatabaseConnectorHelper.CONTENT_URI, id);
-//
-//                intent.setData(currentPetUri);
-//
-//                startActivity(intent);
-//
-//            }
-//        });
-//
-//        //getActivity().getSupportLoaderManager().initLoader(URGENT_BLOOD_LOADER, null, (LoaderManager.LoaderCallbacks<Cursor>)this);
-//
-//        getLoaderManager().initLoader(URGENT_BLOOD_LOADER, null,this);
-
         return rootView;
 
     }
@@ -86,10 +75,46 @@ public class UrgentNeedBloodListViewShowingActivity extends Fragment implements
     public void onActivityCreated(Bundle savedInstanceState) {
         super.onActivityCreated(savedInstanceState);
 
-        ListView urgentbloodListview = (ListView) this.getActivity().findViewById(R.id.urgentbloodlist);
+        final RadioGroup radiogroup = (RadioGroup) this.getActivity().findViewById(R.id.radiogroup);
 
-        mbloodCursorAdapter = new BloodCursorAdapter(getContext(),null);
+        button = (Button) this.getActivity().findViewById(R.id.buttonfilter);
+
+        urgentbloodListview = (ListView) this.getActivity().findViewById(R.id.urgentbloodlist);
+
+        int selectedId = radiogroup.getCheckedRadioButtonId();
+        whatselected  = (RadioButton) this.getActivity().findViewById(selectedId);
+
+//        GetterSetterfilter gettersetter = new GetterSetterfilter();
+//        gettersetter.setWhatis("hi");
+        mbloodCursorAdapter = new BloodCursorAdapter(getContext(), null);
         urgentbloodListview.setAdapter(mbloodCursorAdapter);
+
+
+//        button.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View view) {
+//                String whatselect = whatselected.getText().toString().trim();
+//
+//                if (whatselect.equals("all")) {
+//                    mbloodCursorAdapter = new BloodCursorAdapter(getContext(), null);
+//                    urgentbloodListview.setAdapter(mbloodCursorAdapter);
+//                } else if (whatselect.equals("giversshow")) {
+//                    GetterSetterfilter gettersetter = new GetterSetterfilter();
+//                    gettersetter.setWhatis(whatselect);
+//                    mbloodCursorAdapter = new BloodCursorAdapter(getContext(), null);
+//                    urgentbloodListview.setAdapter(mbloodCursorAdapter);
+//                } else if (whatselect.equals("receiversshow")) {
+//                    mbloodCursorAdapter = new BloodCursorAdapter(getContext(), null);
+//                    urgentbloodListview.setAdapter(mbloodCursorAdapter);
+//                }
+//
+//            }
+//        });
+
+
+
+
+
 
         urgentbloodListview.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
@@ -128,6 +153,9 @@ public class UrgentNeedBloodListViewShowingActivity extends Fragment implements
                 null,
                 null,
                 null);
+
+
+
     }
 
     @Override
@@ -138,6 +166,8 @@ public class UrgentNeedBloodListViewShowingActivity extends Fragment implements
     @Override
     public void onLoaderReset(android.support.v4.content.Loader<Cursor> loader) {
         mbloodCursorAdapter.swapCursor(null);
+
+
     }
 
 }

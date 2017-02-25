@@ -1,14 +1,18 @@
 package com.example.android.hackathonbloodapp;
 
+import android.Manifest;
 import android.app.Activity;
 import android.app.LoaderManager;
 import android.content.CursorLoader;
 import android.content.Intent;
 import android.content.Loader;
+import android.content.pm.PackageManager;
 import android.database.Cursor;
 import android.net.Uri;
 import android.os.Bundle;
+import android.support.v4.app.ActivityCompat;
 import android.support.v7.app.AppCompatActivity;
+import android.view.View;
 import android.widget.Button;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
@@ -26,6 +30,7 @@ public class UrgentBloodDetailActivity extends AppCompatActivity implements Load
     private Uri mCurrentPetUri;
 
     private TextView bloodgroup , personname , urgentorveryurgent , place , phonenumber , hospitalname;
+
 
     Button call,chat;
 
@@ -55,6 +60,10 @@ public class UrgentBloodDetailActivity extends AppCompatActivity implements Load
         place = (TextView)findViewById(R.id.place1);
         phonenumber = (TextView)findViewById(R.id.phonenumber1);
         hospitalname = (TextView)findViewById(R.id.hospitalname1);
+
+
+
+
 
 
     }
@@ -102,7 +111,7 @@ public class UrgentBloodDetailActivity extends AppCompatActivity implements Load
             String personname1 = cursor.getString(personnameColumnIndex);
             String urgentorveryurgent1 = cursor.getString(urgentorveryurgentColumnIndex);
             String place1 = cursor.getString(placeColumnIndex);
-            String phonenumber1 = cursor.getString(phonenumberColumnIndex);
+            final String phonenumber1 = cursor.getString(phonenumberColumnIndex);
             String hospitalname1 = cursor.getString(hospitalnameColumnIndex);
             String getter1111 = cursor.getString(gettersetterindex);
 
@@ -120,6 +129,42 @@ public class UrgentBloodDetailActivity extends AppCompatActivity implements Load
                 call.setBackgroundColor(getResources().getColor(R.color.green500));
                 call.setTextColor(getResources().getColor(R.color.black));
             }
+
+
+            call.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+
+                    Intent callIntent = new Intent(Intent.ACTION_CALL);
+                    callIntent.setData(Uri.fromParts("tel", phonenumber1, null));
+
+                    if (ActivityCompat.checkSelfPermission(UrgentBloodDetailActivity.this,
+                            Manifest.permission.CALL_PHONE) != PackageManager.PERMISSION_GRANTED) {
+                        return;
+                    }
+                    startActivity(callIntent);
+                }
+
+            });
+
+            chat.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    Intent smsIntent = new Intent(Intent.ACTION_VIEW);
+
+                    smsIntent.setType("vnd.android-dir/mms-sms");
+
+                    smsIntent.putExtra("address", phonenumber1);
+
+                    smsIntent.putExtra("sms_body", "I am in need of your blood");
+
+
+                    startActivity(smsIntent);
+                }
+
+            });
+
+
 
 
             bloodgroup.setText(bloodgroup1);

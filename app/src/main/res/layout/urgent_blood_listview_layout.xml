@@ -4,11 +4,60 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-    <ListView
-        android:id="@+id/urgentbloodlist"
+    <LinearLayout
+        android:id="@+id/checkbox"
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
-    </ListView>
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <RadioGroup
+            android:id="@+id/radiogroup"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:visibility="gone">
+
+            <RadioButton
+                android:id="@+id/allshow"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="both"
+                android:checked="true" />
+
+            <RadioButton
+                android:id="@+id/giversshow"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Givers" />
+
+            <RadioButton
+                android:id="@+id/receivershow"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Receivers " />
+
+        </RadioGroup>
+        <Button
+            android:id="@+id/buttonfilter"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="filter"
+            android:visibility="gone"/>
+    </LinearLayout>
+
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/checkbox"
+        android:background="#FFF3E0">
+        <ListView
+            android:id="@+id/urgentbloodlist"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+        </ListView>
+    </RelativeLayout>
+
 
 
     <android.support.design.widget.FloatingActionButton
@@ -17,6 +66,7 @@
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
         android:layout_alignParentRight="true"
-        android:layout_margin="@dimen/fab_margin"/>
+        android:layout_margin="@dimen/fab_margin"
+        android:src="@drawable/addblack"/>
 
 </RelativeLayout>

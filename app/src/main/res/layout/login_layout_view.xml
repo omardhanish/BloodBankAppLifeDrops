@@ -18,7 +18,9 @@
                 android:layout_height="wrap_content"
                 android:orientation="vertical"
                 android:layout_gravity="center"
-                android:layout_margin="30dp">
+                android:layout_margin="30dp"
+                android:padding="5dp"
+                android:background="@drawable/roundedcorners">
 
                 <android.support.design.widget.TextInputLayout
                     android:layout_width="match_parent"
@@ -28,6 +30,7 @@
                         android:layout_width="fill_parent"
                         android:layout_height="wrap_content"
                         android:drawableTint="#FF4081"
+                        android:drawableLeft="@drawable/username"
                         android:textColor="#fff"
                         android:hint="username"
                         android:inputType="textVisiblePassword|textNoSuggestions"
@@ -45,7 +48,8 @@
                         android:layout_height="wrap_content"
                         android:drawableTint="#FF4081"
                         android:hint="password"
-                        android:inputType="textVisiblePassword|textNoSuggestions"
+                        android:drawableLeft="@drawable/password"
+                        android:inputType="textPassword"
                         android:singleLine="true" />
 
                 </android.support.design.widget.TextInputLayout>
@@ -58,6 +62,8 @@
                     android:text="Login"
                     android:background="#FFEB3B"
                     />
+
+
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
@@ -65,17 +71,25 @@
                     android:layout_gravity="center"
                     android:padding="7dp"
                     android:layout_marginTop="15dp"
-                    android:textColor="#fff"/>
+                    android:textColor="#000"/>
 
                 <TextView
+                    android:id="@+id/newheresignup"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="New here ? Sign Up"
                     android:layout_gravity="center"
                     android:layout_marginTop="15dp"
                     android:padding="7dp"
-                    android:textColor="#fff"
+                    android:textColor="#000"
                     />
+
+                <com.google.android.gms.common.SignInButton
+                    android:layout_marginTop="20dp"
+                    android:id="@+id/btn_sign_in"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="20dp"/>
             </LinearLayout>
 
         </LinearLayout>

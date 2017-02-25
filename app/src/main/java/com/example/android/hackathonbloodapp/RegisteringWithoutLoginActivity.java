@@ -9,6 +9,7 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
+import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -18,7 +19,8 @@ import android.widget.Toast;
 public class RegisteringWithoutLoginActivity extends Activity {
 
     TextView yourName2 , yourPlace2 , phoneNumber2 , BloodGroupNeededUrg2, hospitalName2 , typeUrgentOrVeruyUrgent2 ;
-    EditText yourName , yourPlace , phoneNumber , BloodGroupNeededUrg , hospitalName , typeUrgentOrVeruyUrgent ;
+    EditText yourName , phoneNumber  , hospitalName , typeUrgentOrVeruyUrgent ;
+    Spinner yourPlace,BloodGroupNeededUrg;
     Button submit ;
 
     GetterSetter form = new GetterSetter();
@@ -46,9 +48,9 @@ public class RegisteringWithoutLoginActivity extends Activity {
 
 
         yourName = (EditText) findViewById(R.id.editTextYourName);
-        yourPlace = (EditText) findViewById(R.id.editTextYourPlace);
+        yourPlace = (Spinner) findViewById(R.id.editTextYourPlace);
         phoneNumber = (EditText) findViewById(R.id.editTextPhoneNumber);
-        BloodGroupNeededUrg = (EditText) findViewById(R.id.editTextwhichbloodneededurgent);
+        BloodGroupNeededUrg = (Spinner) findViewById(R.id.editTextwhichbloodneededurgent);
         hospitalName = (EditText) findViewById(R.id.editTextHospitalName);
         typeUrgentOrVeruyUrgent = (EditText) findViewById(R.id.editTextUrgentOrVeryUrgent);
 
@@ -67,9 +69,7 @@ public class RegisteringWithoutLoginActivity extends Activity {
             typeUrgentOrVeruyUrgent2.setTextColor(getResources().getColor(R.color.white));
 
             yourName.setTextColor(getResources().getColor(R.color.white));
-            yourPlace.setTextColor(getResources().getColor(R.color.white));
             phoneNumber.setTextColor(getResources().getColor(R.color.white));
-            BloodGroupNeededUrg.setTextColor(getResources().getColor(R.color.white));
             hospitalName.setTextColor(getResources().getColor(R.color.white));
             typeUrgentOrVeruyUrgent.setTextColor(getResources().getColor(R.color.white));
             radioSexButton.setText("Receiver");
@@ -77,6 +77,9 @@ public class RegisteringWithoutLoginActivity extends Activity {
 
         }else if(whichselected1.equals("Giver")){
             getWindow().getDecorView().setBackground(getResources().getDrawable(R.drawable.greenbackground));
+            typeUrgentOrVeruyUrgent.setHint("'any time' or  'weekends' ");
+            hospitalName2.setVisibility(View.GONE);
+            hospitalName.setVisibility(View.GONE);
             radioSexButton.setText("Giver");
         }
 
@@ -91,9 +94,9 @@ public class RegisteringWithoutLoginActivity extends Activity {
 
                 form.setReceiverorgiver(radioSexButton.getText().toString().trim());
                 form.setYourName(yourName.getEditableText().toString().trim());
-                form.setYourPlace(yourPlace.getEditableText().toString().trim());
+                form.setYourPlace(yourPlace.getSelectedItem().toString().trim());
                 form.setPhoneNumber(phoneNumber.getEditableText().toString().trim());
-                form.setBloodGroupNeededUrg(BloodGroupNeededUrg.getEditableText().toString().trim());
+                form.setBloodGroupNeededUrg(BloodGroupNeededUrg.getSelectedItem().toString().trim());
                 form.setHospitalName(hospitalName.getEditableText().toString().trim());
                 form.setTypeUrgentOrVeruyUrgent(typeUrgentOrVeruyUrgent.getEditableText().toString().trim());
 

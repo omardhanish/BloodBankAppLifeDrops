@@ -36,6 +36,8 @@ public class BloodCursorAdapter extends CursorAdapter {
 
 
         CardView cardView = (CardView) view.findViewById(R.id.cardview);
+
+//        TextView hidetextview = (TextView) view.findViewById(R.id.hidetextview);
         TextView nameTextView = (TextView) view.findViewById(R.id.bloodgroup_person_name);
         TextView summaryTextView = (TextView) view.findViewById(R.id.bloodgroup_name);
         TextView summaryTextView2 = (TextView) view.findViewById(R.id.phonenumber_for_ungent_need);
@@ -53,7 +55,16 @@ public class BloodCursorAdapter extends CursorAdapter {
         String phonenumber1 = cursor.getString(phonenoColumnIndex);
         String gettertext = cursor.getString(getorreceiverindex);
 
-        if(gettertext.equals("Receiver")){
+//        GetterSetterfilter setter = new GetterSetterfilter();
+//
+//        String hidetext = setter.getWhatis();
+//
+//        String subject = "dope";
+
+//        if(hidetext.equals("giversshow")){
+//            cardView.setVisibility(view.GONE);
+//        }
+         if(gettertext.equals("Receiver")){
             cardView.setBackgroundColor(context.getResources().getColor(R.color.red100));
             nameTextView.setText(bloodpersonname1);
             summaryTextView.setText(whichBloodneeded1);
@@ -61,7 +72,7 @@ public class BloodCursorAdapter extends CursorAdapter {
             summaryTextView.setTextColor(context.getResources().getColor(R.color.white));
             summaryTextView2.setText(phonenumber1);
             getorreceiver.setText(gettertext);
-            getorreceiver.setBackgroundColor(context.getResources().getColor(R.color.darkred));
+             getorreceiver.setBackgroundColor(context.getResources().getColor(R.color.darkred));
             getorreceiver.setTextColor(context.getResources().getColor(R.color.white));
         }
 

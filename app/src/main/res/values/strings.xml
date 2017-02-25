@@ -1,8 +1,32 @@
 <resources>
-    <string name="app_name">Hackathon Blood App</string>
+    <string name="app_name">Life Drops</string>
 
     <string name="navigation_drawer_open">Open navigation drawer</string>
     <string name="navigation_drawer_close">Close navigation drawer</string>
+    <string name="loading">loading weight</string>
+    <string name="action_settings">show filter</string>
 
-    <string name="action_settings">Settings</string>
+
+    <string-array name="city_arrays">
+        <item>chennai</item>
+        <item>coimbatore</item>
+        <item>delhi</item>
+        <item>mumbai</item>
+        <item>calcutta</item>
+        <item>Bangalore</item>
+        <item>hyderabad</item>
+        <item>pune</item>
+    </string-array>
+
+    <string-array name="bloodgroup">
+        <item>O+</item>
+        <item>O-</item>
+        <item>A+</item>
+        <item>A-</item>
+        <item>B+</item>
+        <item>B-</item>
+        <item>AB+</item>
+        <item>AB-</item>
+    </string-array>
+
 </resources>

@@ -185,7 +185,7 @@
                 android:layout_marginBottom="10dp"
                 android:layout_marginLeft="80dp"
                 android:layout_marginRight="80dp"
-                android:text="Chat" />
+                android:text="sms" />
 
 
         </RelativeLayout>
